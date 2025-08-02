@@ -1,0 +1,34 @@
+[package]
+name = "archiver-server"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7", features = ["macros"] }
+tokio = { version = "1", features = ["full"] }
+tower = "0.4"
+tower-http = { version = "0.5", features = ["cors", "trace"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Storage and hashing
+sled = "0.34"
+sha2 = "0.10"
+blake3 = "1.5"
+hex = "0.4"
+
+# Compression
+zstd = "0.13"
+
+# Async utilities
+futures = "0.3"
+dashmap = "5.5"
+
+# Bloom filter
+bloomfilter = "1.0"
+
+# UUID generation
+uuid = { version = "1.6", features = ["v4", "serde"] }
